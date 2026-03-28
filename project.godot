@@ -1,0 +1,34 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+
+config_version=5
+
+[application]
+
+config/name="Creature Quest"
+config/description="A 3D open-world creature-collecting game"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.0", "3d")
+config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/unused_variable=2
+gdscript/warnings/unused_argument=2
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/vsync/vsync_mode=1
+
+[physics]
+
+3d/physics_engine="GodotPhysics3D"
+
+[rendering]
+
+textures/voxel_gi/probe_capture_update_speed=2
+environment/default_clear_color=Color(0.5, 0.7, 0.9, 1)
+anti_aliasing/quality/msaa_3d=2
