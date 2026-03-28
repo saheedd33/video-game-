@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3ph3xj3xj3xj3xj"]
 
-[ext_resource type="Script" res://scripts/main_game.gd]
-[ext_resource type="Script" res://scripts/player_controller.gd"]
+[ext_resource type="Script" path="res://scripts/main_game.gd"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("res://scripts/main_game.gd")
@@ -14,23 +14,16 @@ light_energy_multiplier = 1.5
 
 [node name="Player" type="CharacterBody3D" parent="."]
 script = ExtResource("res://scripts/player_controller.gd")
-move_speed = 10.0
-camera_distance = 3.0
-camera_height = 1.5
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="Player"]
-mesh = CapsuleMesh.new()
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = CapsuleShape3D.new()
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 
 [node name="Ground" type="CSGBox3D" parent="."]
 size = Vector3(100, 1, 100)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-material = StandardMaterial3D.new()
-material.albedo_color = Color(0.2, 0.5, 0.2)
 
 [node name="BattleUI" type="CanvasLayer" parent="."]
 visible = false

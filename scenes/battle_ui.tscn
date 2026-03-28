@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5t2x2x2x2x2x2x2"]
 
-[ext_resource type="Script" res://scripts/battle_ui_controller.gd"]
+[ext_resource type="Script" path="res://scripts/battle_ui_controller.gd"]
 
 [node name="BattleUI" type="Control"]
 anchor_right = 1.0
@@ -12,71 +12,63 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.1, 0.1, 0.1, 0.8)
 
-# Enemy creature info
 [node name="EnemyPanel" type="PanelContainer" parent="."]
 anchor_left = 0.4
 anchor_top = 0.05
 anchor_right = 0.95
 anchor_bottom = 0.15
-theme_override_styles/panel = StyleBoxFlat.new()
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EnemyPanel"]
+[node name="EnemyVBox" type="VBoxContainer" parent="EnemyPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="NameLabel" type="Label" parent="EnemyPanel/VBoxContainer"]
+[node name="EnemyNameLabel" type="Label" parent="EnemyPanel/EnemyVBox"]
 text = "Enemy Creature (Lv. 5)"
 
-[node name="HPBar" type="ProgressBar" parent="EnemyPanel/VBoxContainer"]
+[node name="EnemyHPBar" type="ProgressBar" parent="EnemyPanel/EnemyVBox"]
 value = 100.0
 custom_minimum_size = Vector2(300, 30)
 
-[node name="HPLabel" type="Label" parent="EnemyPanel/VBoxContainer"]
+[node name="EnemyHPLabel" type="Label" parent="EnemyPanel/EnemyVBox"]
 text = "100 / 100"
 
-# Player creature info
 [node name="PlayerPanel" type="PanelContainer" parent="."]
 anchor_left = 0.05
 anchor_top = 0.75
 anchor_right = 0.50
 anchor_bottom = 0.95
-theme_override_styles/panel = StyleBoxFlat.new()
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PlayerPanel"]
+[node name="PlayerVBox" type="VBoxContainer" parent="PlayerPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="NameLabel" type="Label" parent="PlayerPanel/VBoxContainer"]
+[node name="PlayerNameLabel" type="Label" parent="PlayerPanel/PlayerVBox"]
 text = "Your Creature (Lv. 5)"
 
-[node name="HPBar" type="ProgressBar" parent="PlayerPanel/VBoxContainer"]
+[node name="PlayerHPBar" type="ProgressBar" parent="PlayerPanel/PlayerVBox"]
 value = 100.0
 custom_minimum_size = Vector2(300, 30)
 
-[node name="HPLabel" type="Label" parent="PlayerPanel/VBoxContainer"]
+[node name="PlayerHPLabel" type="Label" parent="PlayerPanel/PlayerVBox"]
 text = "100 / 100"
 
-# Battle log
 [node name="BattleLogPanel" type="PanelContainer" parent="."]
 anchor_left = 0.05
 anchor_top = 0.40
 anchor_right = 0.95
 anchor_bottom = 0.70
-theme_override_styles/panel = StyleBoxFlat.new()
 
 [node name="BattleLog" type="TextEdit" parent="BattleLogPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 readonly = true
-wrap_mode = TextServer.WRAP_WORD
+wrap_mode = 1
 
-# Action buttons
 [node name="ActionsPanel" type="PanelContainer" parent="."]
 anchor_left = 0.05
 anchor_top = 0.85
 anchor_right = 0.95
 anchor_bottom = 1.0
-theme_override_styles/panel = StyleBoxFlat.new()
 
 [node name="GridContainer" type="GridContainer" parent="ActionsPanel"]
 anchor_right = 1.0
